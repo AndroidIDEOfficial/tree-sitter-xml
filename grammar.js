@@ -144,7 +144,7 @@ module.exports = grammar({
             $.cdata_end
         ),
 
-        cdata_start: $ => '<![CDATA',
+        cdata_start: $ => '<![CDATA[',
 
         cdata: $ => repeat1($._char),
 

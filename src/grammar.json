@@ -577,7 +577,7 @@
     },
     "cdata_start": {
       "type": "STRING",
-      "value": "<![CDATA"
+      "value": "<![CDATA["
     },
     "cdata": {
       "type": "REPEAT1",
