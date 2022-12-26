@@ -24,6 +24,10 @@
 
 (comment) @comment
 
+(cdata_start) @cdata.start
+(cdata_end) @cdata.end
+(cdata) @cdata.data
+
 (eq) @operator
 
 ["<" "</" ">" "<?" "?>" "/>"] @operator

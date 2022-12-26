@@ -21,4 +21,6 @@
 
     <!-- This is a comment -->
 
+    <![CDATA[ This is a CDATA section ]]>
+
 </LinearLayout>
