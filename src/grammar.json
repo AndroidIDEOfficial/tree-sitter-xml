@@ -613,6 +613,10 @@
         {
           "type": "SYMBOL",
           "name": "name"
+        },
+        {
+          "type": "STRING",
+          "value": ";"
         }
       ]
     },

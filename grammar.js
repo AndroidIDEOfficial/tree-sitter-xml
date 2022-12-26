@@ -157,7 +157,8 @@ module.exports = grammar({
 
         entity_ref: $ => seq(
             '&',
-            $.name
+            $.name,
+            ';'
         ),
 
         eq: $ => '=',

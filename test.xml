@@ -15,7 +15,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello User!"
+        android:text="This shows the &#x00A9; char reference."
         android:textColor="@color/colorPrimary"
         android:textStyle="bold" />
 
