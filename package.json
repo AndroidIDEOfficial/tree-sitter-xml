@@ -1,0 +1,19 @@
+{
+  "name": "tree-sitter-xml",
+  "version": "1.0.0",
+  "description": "Android XML grammar for tree-sitter.",
+  "main": "bindings/node",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndroidIDEOfficial/tree-sitter-xml.git"
+  },
+  "author": "Akash Yadav",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/AndroidIDEOfficial/tree-sitter-xml/issues"
+  },
+  "homepage": "https://github.com/AndroidIDEOfficial/tree-sitter-xml#readme"
+}
