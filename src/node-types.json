@@ -292,7 +292,18 @@
   {
     "type": "xml_decl",
     "named": true,
-    "fields": {},
+    "fields": {
+      "decl": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "xml",
+            "named": false
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": true,
       "required": true,
@@ -311,17 +322,37 @@
   {
     "type": "xml_encoding",
     "named": true,
-    "fields": {},
+    "fields": {
+      "encoding_attr": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "encoding",
+            "named": false
+          }
+        ]
+      }
+    },
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": true,
       "types": [
         {
           "type": "eq",
           "named": true
+        },
+        {
+          "type": "xml_encoding_value",
+          "named": true
         }
       ]
     }
+  },
+  {
+    "type": "xml_encoding_value",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "xml_file",
@@ -353,17 +384,37 @@
   {
     "type": "xml_version",
     "named": true,
-    "fields": {},
+    "fields": {
+      "version_attr": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "version",
+            "named": false
+          }
+        ]
+      }
+    },
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": true,
       "types": [
         {
           "type": "eq",
           "named": true
+        },
+        {
+          "type": "xml_version_value",
+          "named": true
         }
       ]
     }
+  },
+  {
+    "type": "xml_version_value",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "\"",
@@ -410,10 +461,6 @@
     "named": false
   },
   {
-    "type": "<?xml",
-    "named": false
-  },
-  {
     "type": ">",
     "named": false
   },
@@ -451,6 +498,10 @@
   },
   {
     "type": "version",
+    "named": false
+  },
+  {
+    "type": "xml",
     "named": false
   },
   {

@@ -418,7 +418,15 @@
       "members": [
         {
           "type": "STRING",
-          "value": "<?xml"
+          "value": "<?"
+        },
+        {
+          "type": "FIELD",
+          "name": "decl",
+          "content": {
+            "type": "STRING",
+            "value": "xml"
+          }
         },
         {
           "type": "SYMBOL",
@@ -462,13 +470,26 @@
           "name": "_ws"
         },
         {
-          "type": "STRING",
-          "value": "version"
+          "type": "FIELD",
+          "name": "version_attr",
+          "content": {
+            "type": "STRING",
+            "value": "version"
+          }
         },
         {
           "type": "SYMBOL",
           "name": "eq"
         },
+        {
+          "type": "SYMBOL",
+          "name": "xml_version_value"
+        }
+      ]
+    },
+    "xml_version_value": {
+      "type": "SEQ",
+      "members": [
         {
           "type": "SYMBOL",
           "name": "_quote"
@@ -491,13 +512,26 @@
           "name": "_ws"
         },
         {
-          "type": "STRING",
-          "value": "encoding"
+          "type": "FIELD",
+          "name": "encoding_attr",
+          "content": {
+            "type": "STRING",
+            "value": "encoding"
+          }
         },
         {
           "type": "SYMBOL",
           "name": "eq"
         },
+        {
+          "type": "SYMBOL",
+          "name": "xml_encoding_value"
+        }
+      ]
+    },
+    "xml_encoding_value": {
+      "type": "SEQ",
+      "members": [
         {
           "type": "SYMBOL",
           "name": "_quote"

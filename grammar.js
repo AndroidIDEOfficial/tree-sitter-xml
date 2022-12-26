@@ -106,7 +106,7 @@ module.exports = grammar({
         ),
 
         xml_decl: $ => seq(
-            '<?xml',
+            '<?', field("decl", 'xml'),
             $.xml_version,
             optional($.xml_encoding),
             optional($._ws),
@@ -115,8 +115,12 @@ module.exports = grammar({
 
         xml_version: $ => seq(
             $._ws,
-            'version',
+            field("version_attr", 'version'),
             $.eq,
+            $.xml_version_value
+        ),
+
+        xml_version_value: $ => seq(
             $._quote,
             $._dec_num,
             $._quote
@@ -124,8 +128,12 @@ module.exports = grammar({
 
         xml_encoding: $ => seq(
             $._ws,
-            'encoding',
+            field("encoding_attr", 'encoding'),
             $.eq,
+            $.xml_encoding_value
+        ),
+
+        xml_encoding_value: $ => seq(
             $._quote,
             $._encoding,
             $._quote

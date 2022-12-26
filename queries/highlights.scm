@@ -1,3 +1,15 @@
+(xml_decl
+  decl: "xml" @xml_decl)
+
+(xml_version
+  version_attr: "version" @attr.name)
+
+(xml_encoding
+  encoding_attr: "encoding" @attr.name)
+
+(xml_version_value) @attr.value
+(xml_encoding_value) @attr.value
+
 (empty_element
   tag_name: (name) @element.tag)
 
