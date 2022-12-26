@@ -15,5 +15,13 @@
   "bugs": {
     "url": "https://github.com/AndroidIDEOfficial/tree-sitter-xml/issues"
   },
-  "homepage": "https://github.com/AndroidIDEOfficial/tree-sitter-xml#readme"
+  "homepage": "https://github.com/AndroidIDEOfficial/tree-sitter-xml#readme",
+  "tree-sitter": [
+    {
+      "scope": "source.xml",
+      "file-types": [
+        "xml"
+      ]
+    }
+  ]
 }

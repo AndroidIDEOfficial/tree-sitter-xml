@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Hello User!" />
+        android:text="Hello &amp; Welcome to &lt;AndroidIDE&gt;!" />
 
     <TextView
         android:layout_width="match_parent"
@@ -19,5 +19,6 @@
         android:textColor="@color/colorPrimary"
         android:textStyle="bold" />
 
+    <!-- This is a comment -->
 
 </LinearLayout>

@@ -22,17 +22,19 @@ module.exports = grammar({
 
         element: $ => choice(
             $.empty_element,
-            seq(
-                $.tag_start,
-                optional($.char_data),
-                optional($._content),
-                $.tag_end
-            )
+            $.end_tag_element
+        ),
+
+        end_tag_element: $ => seq(
+            $.tag_start,
+            optional($.char_data),
+            optional($._content),
+            $.tag_end
         ),
 
         empty_element: $ => seq(
             '<',
-            $.name,
+            field("tag_name", $.name),
             repeat(seq($._ws, $.attribute)),
             optional($._ws),
             '/>'
@@ -40,7 +42,7 @@ module.exports = grammar({
 
         tag_start: $ => seq(
             '<',
-            $.name,
+            field("tag_name", $.name),
             repeat(
                 seq(
                     $._ws,
@@ -53,7 +55,7 @@ module.exports = grammar({
 
         tag_end: $ => seq(
             '</',
-            $.name,
+            field("tag_name", $.name),
             optional($._ws),
             '>'
         ),
@@ -80,15 +82,15 @@ module.exports = grammar({
         ns_decl: $ => seq(
             'xmlns',
             ':',
-            field("prefix", $.name),
-            $._eq,
+            field("xmlns_prefix", $.name),
+            $.eq,
             $.attr_value,
         ),
 
         xml_attr: $ => seq(
             optional(seq(field("ns_prefix", $.name), ':')),
             field("attr_name", $.name),
-            $._eq,
+            $.eq,
             $.attr_value,
         ),
 
@@ -114,7 +116,7 @@ module.exports = grammar({
         xml_version: $ => seq(
             $._ws,
             'version',
-            $._eq,
+            $.eq,
             $._quote,
             $._dec_num,
             $._quote
@@ -123,7 +125,7 @@ module.exports = grammar({
         xml_encoding: $ => seq(
             $._ws,
             'encoding',
-            $._eq,
+            $.eq,
             $._quote,
             $._encoding,
             $._quote
@@ -158,10 +160,11 @@ module.exports = grammar({
             $.name
         ),
 
+        eq: $ => '=',
+
         _misc: $ => choice($.pi, $.comment, $._char),
         _char: $ => /./,
         _ws: $ => /\s/,
-        _eq: $ => '=',
         _quote: $ => choice('"', '\''),
         _dec_num: $ => /[0-9]+\.[0-9]+/,
         _encoding: $ => token(/[A-Za-z]([A-Za-z0-9._\-])*/)
