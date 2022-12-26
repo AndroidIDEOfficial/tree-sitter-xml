@@ -20,6 +20,7 @@
         android:textStyle="bold" />
 
     <!-- This is a comment -->
+    <!-- The < in a comment should not mess up bracket pairs -->
 
     <![CDATA[ This is a CDATA section ]]>
 
