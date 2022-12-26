@@ -1,0 +1,121 @@
+===
+Test empty_element
+===
+
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"/>
+
+---
+
+(xml_file
+  (xml_decl
+    (xml_version)
+    (xml_encoding))
+  (element
+    (empty_element
+      (name)
+      (attribute
+        (ns_decl
+          prefix: (name)
+          (attr_value)))
+      (attribute
+        (xml_attr
+          ns_prefix: (name)
+          attr_name: (name)
+          (attr_value)))
+      (attribute
+        (xml_attr
+          ns_prefix: (name)
+          attr_name: (name)
+          (attr_value))))))
+
+
+===
+Test element with children
+===
+
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">
+
+  <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Hello World!"/>
+
+  <Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Click me"/>
+
+</LinearLayout>
+
+---
+
+(xml_file
+  (xml_decl
+    (xml_version)
+    (xml_encoding))
+  (element
+    (tag_start
+      (name)
+      (attribute
+        (ns_decl
+          prefix: (name)
+          (attr_value)))
+      (attribute
+        (xml_attr
+          ns_prefix: (name)
+          attr_name: (name)
+          (attr_value)))
+      (attribute
+        (xml_attr
+          ns_prefix: (name)
+          attr_name: (name)
+          (attr_value))))
+    (char_data)
+    (element
+      (empty_element
+        (name)
+        (attribute
+          (xml_attr
+            ns_prefix: (name)
+            attr_name: (name)
+            (attr_value)))
+        (attribute
+          (xml_attr
+            ns_prefix: (name)
+            attr_name: (name)
+            (attr_value)))
+        (attribute
+          (xml_attr
+            ns_prefix: (name)
+            attr_name: (name)
+            (attr_value)))))
+    (char_data)
+    (element
+      (empty_element
+        (name)
+        (attribute
+          (xml_attr
+            ns_prefix: (name)
+            attr_name: (name)
+            (attr_value)))
+        (attribute
+          (xml_attr
+            ns_prefix: (name)
+            attr_name: (name)
+            (attr_value)))
+        (attribute
+          (xml_attr
+            ns_prefix: (name)
+            attr_name: (name)
+            (attr_value)))))
+    (char_data)
+    (tag_end
+      (name))))
