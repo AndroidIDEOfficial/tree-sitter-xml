@@ -29,8 +29,6 @@
 
 (attr_value) @attr.value
 
-(comment) @comment
-
 (entity_ref) @xml.ref
 (char_ref) @xml.ref
 
