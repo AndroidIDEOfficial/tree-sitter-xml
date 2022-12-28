@@ -269,7 +269,7 @@
               },
               {
                 "type": "SYMBOL",
-                "name": "_cdata_sect"
+                "name": "cdata_sect"
               },
               {
                 "type": "SYMBOL",
@@ -584,7 +584,7 @@
         "value": "(&#[0-9]+;)|(&#x[0-9a-fA-F]+;)"
       }
     },
-    "_cdata_sect": {
+    "cdata_sect": {
       "type": "SEQ",
       "members": [
         {

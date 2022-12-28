@@ -65,7 +65,7 @@ module.exports = grammar({
                 choice(
                     $.element,
                     $._ref,
-                    $._cdata_sect,
+                    $.cdata_sect,
                     $.pi,
                     $.comment
                 ),
@@ -146,7 +146,7 @@ module.exports = grammar({
         char_data: $ => /[^<&]*/,
         char_ref: $ => token(/(&#[0-9]+;)|(&#x[0-9a-fA-F]+;)/),
 
-        _cdata_sect: $ => seq(
+        cdata_sect: $ => seq(
             $.cdata_start,
             optional($.cdata),
             $.cdata_end
