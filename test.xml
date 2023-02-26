@@ -19,6 +19,8 @@
         android:textColor="@color/colorPrimary"
         android:textStyle="bold" />
 
+    <number21.in.tag/>
+
     <!-- This is a comment -->
     <!-- XML entity reference &amp; &#x00A9; in a comment? -->
     <!-- The < in a comment should not mess up bracket pairs -->

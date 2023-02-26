@@ -139,7 +139,7 @@ module.exports = grammar({
             $._quote
         ),
 
-        name: $ => token(/[A-Za-z_]([A-Za-z_\-.])*/),
+        name: $ => token(/[A-Za-z_]([A-Za-z0-9_\-.])*/),
 
         comment: $ => seq('<!--', repeat($._char), '-->'),
 
