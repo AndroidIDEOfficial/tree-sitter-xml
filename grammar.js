@@ -37,7 +37,8 @@ module.exports = grammar({
             field("tag_name", $.name),
             repeat(seq($._ws, $.attribute)),
             optional($._ws),
-            '/>'
+            '/',
+            '>'
         ),
 
         tag_start: $ => seq(
@@ -54,7 +55,8 @@ module.exports = grammar({
         ),
 
         tag_end: $ => seq(
-            '</',
+            '<',
+            '/',
             field("tag_name", $.name),
             optional($._ws),
             '>'
