@@ -583,7 +583,7 @@
     },
     "char_data": {
       "type": "PATTERN",
-      "value": "[^<&]*"
+      "value": "[^<&\\s]*"
     },
     "char_ref": {
       "type": "TOKEN",
@@ -718,8 +718,8 @@
   },
   "extras": [
     {
-      "type": "PATTERN",
-      "value": "\\s"
+      "type": "SYMBOL",
+      "name": "_ws"
     }
   ],
   "conflicts": [],

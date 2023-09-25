@@ -1,27 +1,42 @@
 {
   "name": "tree-sitter-xml",
   "version": "1.0.0",
-  "description": "Android XML grammar for tree-sitter.",
+  "description": "Tree Sitter grammar for XML files",
   "main": "bindings/node",
   "scripts": {
-    "test": "test"
+    "build": "tree-sitter generate",
+    "build-wasm": "tree-sitter build-wasm",
+    "test": "tree-sitter test",
+    "playground": "tree-sitter generate && tree-sitter build-wasm && tree-sitter playground"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/AndroidIDEOfficial/tree-sitter-xml.git"
   },
+  "keywords": [
+    "androidide",
+    "treesitter",
+    "grammar",
+    "xml"
+  ],
   "author": "Akash Yadav",
-  "license": "GPL-3.0-or-later",
+  "license": "GPL-3.0-only",
   "bugs": {
     "url": "https://github.com/AndroidIDEOfficial/tree-sitter-xml/issues"
   },
   "homepage": "https://github.com/AndroidIDEOfficial/tree-sitter-xml#readme",
   "tree-sitter": [
     {
-      "scope": "source.xml",
+      "scope": "scope.xml",
       "file-types": [
         "xml"
       ]
     }
-  ]
+  ],
+  "dependencies": {
+    "nan": "^2.17.0"
+  },
+  "devDependencies": {
+    "tree-sitter-cli": "^0.20.8"
+  }
 }

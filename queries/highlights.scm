@@ -40,4 +40,6 @@
 
 (eq) @operator
 
-["<" "</" ">" "<?" "?>" "/>"] @operator
+(char_data) @text
+
+; ["<" "</" ">" "<?" "?>" "/>"] @operator
