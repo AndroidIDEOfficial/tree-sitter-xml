@@ -1,6 +1,10 @@
 module.exports = grammar({
     name: 'xml',
 
+    extras: $ => [
+        $._ws
+    ],
+
     rules: {
         xml_file: $ => seq(
             optional($.xml_decl),
@@ -145,7 +149,7 @@ module.exports = grammar({
 
         comment: $ => seq('<!--', repeat($._char), '-->'),
 
-        char_data: $ => /[^<&]*/,
+        char_data: $ => /[^<&\s]*/,
         char_ref: $ => token(/(&#[0-9]+;)|(&#x[0-9a-fA-F]+;)/),
 
         cdata_sect: $ => seq(
